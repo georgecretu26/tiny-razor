@@ -2,10 +2,11 @@ import {
     FETCH_SUBREDDIT, 
     FETCH_SUBREDDIT_SUCCESS, 
     FETCH_SUBREDDIT_ERROR,
+    REMOVE_ITEM,
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    isLoading: true,
+    isLoading: '',
     data: [],
     error: '',
 }
@@ -15,7 +16,7 @@ export default (state = INITIAL_STATE, action) => {
         case FETCH_SUBREDDIT:
             return {
                 ...state,
-                isLoading: action.isLoading,
+                isLoading: true,
             }
 
         case FETCH_SUBREDDIT_SUCCESS:
@@ -31,6 +32,13 @@ export default (state = INITIAL_STATE, action) => {
             isLoading: false,
             error: action.error,
         }
+
+        case REMOVE_ITEM:
+            const id = action.id;
+            return {
+                ...state,
+                data: state.data.filter((article) => article.id !== id)
+            }
         
         default:
             return state;

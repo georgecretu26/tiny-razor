@@ -19,6 +19,13 @@
   color: white;
 }
 
+a{text-decoration: none}
+li{
+  list-style: none;
+  display: inline;
+  padding: 5px 15px;
+}
+
 .App-link {
   color: #61dafb;
 }

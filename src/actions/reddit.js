@@ -2,6 +2,7 @@ import {
     FETCH_SUBREDDIT, 
     FETCH_SUBREDDIT_SUCCESS, 
     FETCH_SUBREDDIT_ERROR,
+    REMOVE_ITEM,
 } from './types';
 import { formatResponse } from './utils';
 
@@ -17,13 +18,16 @@ export const fetchSubreddit = () => dispatch => {
     dispatch({ type: FETCH_SUBREDDIT, isLoading: true });
     axios.get(endpoint)
     .then((response) => {
-        console.log(response);
         const { children: articles } = response.data.data;
         const pritierArray = formatResponse(articles);
+
         dispatch({ type: FETCH_SUBREDDIT_SUCCESS, data: pritierArray });
     })
     .catch((error) => {
-        console.log(error);
         dispatch({ type: FETCH_SUBREDDIT_ERROR, error});
     });
 };
+
+export const removeItem = (id) => dispatch => {
+    dispatch({ type: REMOVE_ITEM, id})
+}
