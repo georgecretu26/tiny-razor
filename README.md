@@ -2,9 +2,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Tiny-razor
 Is random name generated. It contains 3 pages.
-#Welcome - a short message about the app 
-#Reddit - a small page where you can fetch a list of articles from Reddit API
-#History - [work in progress] a small page where the user is able to see all the articles he has voted for
+
+<b>Welcome</b> - a short message about the app <br>
+<b>Reddit</b> - a small page where you can fetch a list of articles from Reddit API <br>
+<b>History</b> - [work in progress] a small page where the user is able to see all the articles he has voted for <br>
 
 ## Available Scripts
 
